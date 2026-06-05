@@ -430,6 +430,13 @@
       line-height: 1.6;
     }
 
+    .luxury-email-link {
+      display: inline-flex;
+      margin-top: 16px;
+      color: #d4af37;
+      font-weight: 700;
+    }
+
     .contact-row {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -514,7 +521,8 @@
       line-height: 1.6;
     }
 
-    .footer-contact {
+    .footer-contact,
+    .gold-text {
       margin-top: 8px;
       color: #d4af37;
     }
@@ -642,7 +650,7 @@
               <p class="product-description">Museum-grade archival print celebrating traditional canvas patterns with a contemporary finish.</p>
               <div class="product-meta">
                 <span class="product-price">$75.00</span>
-                <a href="mailto:business@youngofafrica.com?subject=Heritage%20Fine%20Art%20Print%20inquiry" class="acquire-btn">Acquire</a>
+                <a href="#" class="acquire-btn" data-subject="Heritage Fine Art Print inquiry">Acquire</a>
               </div>
             </div>
           </article>
@@ -657,7 +665,7 @@
               <p class="product-description">Heavyweight luxury cotton streetwear embroidered with abstract geometric lineage patterns.</p>
               <div class="product-meta">
                 <span class="product-price">$120.00</span>
-                <a href="mailto:business@youngofafrica.com?subject=Signature%20Tribal%20Hoodie%20inquiry" class="acquire-btn">Acquire</a>
+                <a href="#" class="acquire-btn" data-subject="Signature Tribal Hoodie inquiry">Acquire</a>
               </div>
             </div>
           </article>
@@ -672,7 +680,7 @@
               <p class="product-description">A locally inspired sculptural piece blending ancestral silhouettes with geometric modernism.</p>
               <div class="product-meta">
                 <span class="product-price">$340.00</span>
-                <a href="mailto:business@youngofafrica.com?subject=Handcrafted%20Sculpted%20Icon%20inquiry" class="acquire-btn">Acquire</a>
+                <a href="#" class="acquire-btn" data-subject="Handcrafted Sculpted Icon inquiry">Acquire</a>
               </div>
             </div>
           </article>
@@ -681,16 +689,17 @@
     </section>
 
     <section id="contact" class="contact-section" aria-labelledby="contactTitle">
-      <form class="contact-card" id="contactForm" action="mailto:business@youngofafrica.com" method="post" enctype="text/plain">
+      <form class="contact-card" id="contactForm" action="#" method="post">
         <p class="luxury-subtitle">Connect With Us</p>
         <h2 id="contactTitle">Global Inquiries</h2>
         <p>For partnership proposals, general inquiries, custom collection orders, and member questions, reach out to our management office directly.</p>
+        <a href="#" id="secure-email" class="luxury-email-link">Loading secure contact...</a>
         <div class="contact-row">
           <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-label="Email address" required>
           <button class="contact-button" type="submit">Send</button>
         </div>
         <textarea id="message" name="message" placeholder="Write your question or inquiry here." aria-label="Question or inquiry" required></textarea>
-        <p class="signup-note" id="signupNote">Your email app will open with business@youngofafrica.com filled in.</p>
+        <p class="signup-note" id="signupNote">Your email app will open with the secure contact address filled in.</p>
       </form>
     </section>
   </main>
@@ -698,35 +707,50 @@
   <footer class="luxury-footer">
     <div class="footer-container">
       <p class="footer-logo">&#9650; Young of Africa &#9660;</p>
-      <p class="footer-contact">Official Registry: <a href="mailto:business@youngofafrica.com">business@youngofafrica.com</a></p>
+      <p class="footer-contact">Official Registry: <span id="secure-footer-email">Protected</span></p>
       <div class="footer-divider"></div>
       <p class="footer-copyright">&copy; 2026 Young of Africa. All rights reserved. Crafted with excellence.</p>
     </div>
   </footer>
 
   <script>
-    const contactEmail = "business@youngofafrica.com";
+    window.addEventListener("DOMContentLoaded", () => {
+      const user = "business";
+      const domain = "youngofafrica.com";
+      const fullEmail = `${user}@${domain}`;
 
-    document.getElementById("contactForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const note = document.getElementById("signupNote");
+      const emailLink = document.getElementById("secure-email");
+      emailLink.href = `mailto:${fullEmail}`;
+      emailLink.textContent = fullEmail;
 
-      if (!form.reportValidity()) {
-        return;
-      }
+      document.getElementById("secure-footer-email").textContent = fullEmail;
 
-      const senderEmail = form.email.value.trim();
-      const message = form.message.value.trim();
-      const subject = "Young of Africa inquiry";
-      const body = [
-        `From: ${senderEmail}`,
-        "",
-        message
-      ].join("\n");
+      document.querySelectorAll("[data-subject]").forEach((link) => {
+        const subject = link.dataset.subject;
+        link.href = `mailto:${fullEmail}?subject=${encodeURIComponent(subject)}`;
+      });
 
-      window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      note.textContent = `Opening your email app to send this to ${contactEmail}.`;
+      document.getElementById("contactForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const note = document.getElementById("signupNote");
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        const senderEmail = form.email.value.trim();
+        const message = form.message.value.trim();
+        const subject = "Young of Africa inquiry";
+        const body = [
+          `From: ${senderEmail}`,
+          "",
+          message
+        ].join("\n");
+
+        window.location.href = `mailto:${fullEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        note.textContent = `Opening your email app to send this to ${fullEmail}.`;
+      });
     });
   </script>
 </body>
