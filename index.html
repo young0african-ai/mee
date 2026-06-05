@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="VmQJKlDWj7hIoObQnFas3u4HU156_df3xOFiyeQsujs" />
   <title>Young of Africa | Empowering the Next Generation</title>
-  <meta name="description" content="Discover the vibrant potential, cultural heritage, and leadership of Africa's youth. Empowering innovators, creators, and leaders across the continent.">
+  <meta name="description" content="Discover the vibrant potential, cultural heritage, and leadership of Africa's youth. Empowering innovators, creators, and leaders across the continent through technology and art.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -249,15 +249,70 @@
       border: 0;
     }
 
+    .luxury-manifesto-section,
     .luxury-text-section {
       padding: clamp(64px, 9vw, 104px) 20px;
     }
 
-    .section-gold-title {
+    .manifesto-container {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-gold-title,
+    .manifesto-gold-title {
       color: #d4af37;
       font-family: "Cinzel", serif;
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.08;
+    }
+
+    .manifesto-glass-card,
+    .transparency-card {
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.035);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(12px);
+      text-align: left;
+    }
+
+    .manifesto-glass-card {
+      padding: clamp(24px, 5vw, 42px);
+    }
+
+    .manifesto-glass-card p {
+      color: rgba(255, 255, 255, 0.74);
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      line-height: 1.78;
+    }
+
+    .manifesto-glass-card p + p {
+      margin-top: 18px;
+    }
+
+    .highlighted-manifesto-text {
+      padding: 18px;
+      border-left: 2px solid #d4af37;
+      color: #ffffff !important;
+      background: rgba(212, 175, 55, 0.08);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+    }
+
+    .emphasized-gold-text {
+      color: #d4af37;
+      font-weight: 800;
+    }
+
+    .manifesto-footer-mark {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(212, 175, 55, 0.18);
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.7;
+      text-align: center;
     }
 
     .luxury-lead-text {
@@ -301,6 +356,26 @@
       color: rgba(255, 255, 255, 0.66);
       font-size: 0.94rem;
       line-height: 1.62;
+    }
+
+    .transparency-card {
+      margin-top: 28px;
+      padding: clamp(22px, 4vw, 30px);
+      text-align: center;
+    }
+
+    .transparency-card h3 {
+      margin-top: 10px;
+      color: #ffffff;
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+    }
+
+    .transparency-card p {
+      max-width: 780px;
+      margin: 14px auto 0;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.7;
     }
 
     .luxury-shop-section {
@@ -741,6 +816,7 @@
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#media" class="nav-item active">Home</a>
+        <a href="#manifesto" class="nav-item">Manifesto</a>
         <a href="#about" class="nav-item">Our Mission</a>
         <a href="#shop" class="nav-item">The Shop</a>
         <a href="#contact" class="nav-item gold-nav">Contact</a>
@@ -774,6 +850,30 @@
       </div>
     </section>
 
+    <section id="manifesto" class="luxury-manifesto-section" aria-labelledby="manifestoTitle">
+      <div class="manifesto-container">
+        <p class="luxury-subtitle">Our Manifesto</p>
+        <h2 class="manifesto-gold-title" id="manifestoTitle">The Augmented Artisan</h2>
+        <div class="luxury-divider">
+          <span class="diamond-node">&#9660;</span>
+        </div>
+
+        <div class="manifesto-glass-card">
+          <p>Since the beginning of time, Africa's greatest treasures have not been buried deep in the earth; they have lived in the minds of the people. Our stories, our structures, and our innovations have always been unmatched.</p>
+          <p>Now, a brand new window is opening before us. Many are worried that Artificial Intelligence may take over man's work, kill cultural expressions, and mute human voices. But at Young of Africa, we envision a completely different scenario.</p>
+          <p class="highlighted-manifesto-text">AI is soulless. It has no culture. It also doesn't belong to any generation.</p>
+          <p>If left on its own, a computer-generated brush won't be able to paint a masterpiece and an algorithm won't be able to tell our story. For it to result in a work of genius, the raw and unrestrained creativity of an African youngster is <span class="emphasized-gold-text">needed</span> to provide it with meaning, context, and life.</p>
+          <p>AI is not a successor to the artist; it is the greatest leveler. It enables one single dreamer to have the capabilities of an entire company. We are not scared of the future, we <span class="emphasized-gold-text">write</span> it.</p>
+          <p>By blending our strong cultural traditions with the latest technology, African young pioneers are not only skipping old limits, they are gaining access to international platforms and changing the digital narrative.</p>
+
+          <div class="manifesto-footer-mark">
+            This is the place where tradition and the future come together.<br>
+            <strong>Welcome to the beginning of the Augmented Artisan.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="luxury-text-section" aria-labelledby="aboutTitle">
       <div class="text-container">
         <h2 class="section-gold-title" id="aboutTitle">Empowering the Future</h2>
@@ -798,30 +898,36 @@
             <p>Equipping the next generation of pioneers with the networks, skills, and platforms required to drive positive continental impact.</p>
           </article>
         </div>
+
+        <div class="transparency-card">
+          <span class="logo-icon">&#9650;</span>
+          <h3>Behind The Design: Radical Transparency</h3>
+          <p>True to our manifesto, this platform is a live demonstration of human-AI collaboration. The skeletal code configuration and polished container layouts were co-engineered by an African dreamer directing advanced AI models. We control the machine; the machine scales our vision.</p>
+        </div>
       </div>
     </section>
 
     <section id="shop" class="luxury-shop-section" aria-labelledby="shopTitle">
       <div class="shop-container">
-        <p class="luxury-subtitle">Exclusive Creations</p>
+        <p class="luxury-subtitle">Exclusive Acquisitions</p>
         <h2 class="section-gold-title" id="shopTitle">The Curated Collection</h2>
         <div class="luxury-divider">
           <span class="diamond-node">&#9660;</span>
         </div>
-        <p class="luxury-lead-text">Support our creators directly. Every acquisition fuels sustainable funding for youth-led community initiatives across Africa.</p>
+        <p class="luxury-lead-text">Support our creators directly. Every acquisition balances advanced technology with ancestral roots, providing sustainable funding for youth-led initiatives.</p>
 
         <div class="shop-grid">
           <article class="product-card">
             <div class="product-image-holder">
-              <div class="product-art" aria-hidden="true">Art</div>
-              <span class="product-tag">Limited</span>
+              <div class="product-art" aria-hidden="true">AI</div>
+              <span class="product-tag">AI Assisted</span>
             </div>
             <div class="product-info">
-              <h3>Heritage Fine Art Print</h3>
-              <p class="product-description">Museum-grade archival print celebrating traditional canvas patterns with a contemporary finish.</p>
+              <h3>Augmented Fine Art Print</h3>
+              <p class="product-description">Museum-grade archival print featuring complex lineage patterns drafted by human artists with generative tools.</p>
               <div class="product-meta">
                 <span class="product-price">$75.00</span>
-                <button class="acquire-btn" type="button" data-add-to-cart="art-print-01" data-name="Heritage Fine Art Print" data-price="75.00">Acquire</button>
+                <button class="acquire-btn" type="button" data-add-to-cart="art-print-01" data-name="Augmented Fine Art Print" data-price="75.00">Acquire</button>
               </div>
             </div>
           </article>
@@ -829,14 +935,14 @@
           <article class="product-card">
             <div class="product-image-holder">
               <div class="product-art" aria-hidden="true">YA</div>
-              <span class="product-tag">New</span>
+              <span class="product-tag">Co-Designed</span>
             </div>
             <div class="product-info">
-              <h3>Signature Tribal Hoodie</h3>
-              <p class="product-description">Heavyweight luxury cotton streetwear embroidered with abstract geometric lineage patterns.</p>
+              <h3>Algorithmic Tribal Hoodie</h3>
+              <p class="product-description">Heavyweight luxury streetwear embroidered with abstract computational geometries generated by African young creators.</p>
               <div class="product-meta">
                 <span class="product-price">$120.00</span>
-                <button class="acquire-btn" type="button" data-add-to-cart="tribal-hoodie-02" data-name="Signature Tribal Hoodie" data-price="120.00">Acquire</button>
+                <button class="acquire-btn" type="button" data-add-to-cart="tribal-hoodie-02" data-name="Algorithmic Tribal Hoodie" data-price="120.00">Acquire</button>
               </div>
             </div>
           </article>
@@ -847,11 +953,11 @@
               <span class="product-tag">Unique</span>
             </div>
             <div class="product-info">
-              <h3>Handcrafted Sculpted Icon</h3>
-              <p class="product-description">A locally inspired sculptural piece blending ancestral silhouettes with geometric modernism.</p>
+              <h3>Hybrid Sculpted Icon</h3>
+              <p class="product-description">A locally inspired sculptural piece blending ancestral silhouettes, handmade craft, and modern digital concepting.</p>
               <div class="product-meta">
                 <span class="product-price">$340.00</span>
-                <button class="acquire-btn" type="button" data-add-to-cart="sculpted-icon-03" data-name="Handcrafted Sculpted Icon" data-price="340.00">Acquire</button>
+                <button class="acquire-btn" type="button" data-add-to-cart="sculpted-icon-03" data-name="Hybrid Sculpted Icon" data-price="340.00">Acquire</button>
               </div>
             </div>
           </article>
