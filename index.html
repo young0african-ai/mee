@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="VmQJKlDWj7hIoObQnFas3u4HU156_df3xOFiyeQsujs" />
-  <title>Young Africa | Untold Stories, Culture, Identity</title>
+  <title>Young of Africa</title>
   <style>
     :root {
       color-scheme: dark;
@@ -281,76 +281,90 @@
       background: rgba(13, 148, 136, 0.16);
     }
 
-    .video-theater {
-      display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
-      gap: 18px;
-      padding: clamp(18px, 3vw, 24px);
-      border-color: rgba(217, 164, 65, 0.34);
-      background:
-        linear-gradient(135deg, rgba(217, 164, 65, 0.12), rgba(13, 148, 136, 0.08)),
-        rgba(15, 23, 42, 0.84);
+    .luxury-video-section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(50px, 8vw, 80px) 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0a0c 0%, #121216 100%);
     }
 
-    .video-frame {
+    .luxury-backdrop-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(600px, 78vw);
+      height: min(600px, 78vw);
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(217, 164, 65, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+    }
+
+    .luxury-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .luxury-subtitle {
+      margin: 0 0 12px;
+      color: var(--gold-bright);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .luxury-title {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 760;
+      line-height: 1.05;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .luxury-divider {
+      width: 60px;
+      height: 1px;
+      margin: 25px auto 45px;
+      background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+    }
+
+    .luxury-video-frame {
+      padding: 12px;
+      border: 1px solid rgba(217, 164, 65, 0.25);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(217, 164, 65, 0.08);
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .luxury-video-frame:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 164, 65, 0.45);
+    }
+
+    .luxury-video-wrapper {
       position: relative;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      border: 1px solid rgba(217, 164, 65, 0.48);
       border-radius: var(--radius);
       background: rgba(2, 6, 23, 0.76);
-      box-shadow: 0 24px 70px rgba(2, 6, 23, 0.45), 0 0 0 1px rgba(217, 164, 65, 0.08);
     }
 
-    .video-frame::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(217, 164, 65, 0.14), transparent 22%, transparent 78%, rgba(217, 164, 65, 0.14)),
-        linear-gradient(180deg, rgba(248, 250, 252, 0.08), transparent 22%);
-    }
-
-    .video-frame iframe {
+    .luxury-video-wrapper iframe {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
-    }
-
-    .video-sidebar {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: var(--radius);
-      background: rgba(15, 23, 42, 0.64);
-      backdrop-filter: blur(14px);
-    }
-
-    .video-sidebar h2 {
-      margin-top: 10px;
-      color: var(--text);
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
-      line-height: 0.98;
-    }
-
-    .video-sidebar p {
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.62;
-    }
-
-    .video-meta {
-      display: grid;
-      gap: 8px;
-      color: var(--quiet);
-      font-size: 0.82rem;
     }
 
     .hero-stats {
@@ -1006,7 +1020,6 @@
     @media (max-width: 940px) {
       .hero,
       .mission,
-      .video-theater,
       .newsletter {
         grid-template-columns: 1fr;
       }
@@ -1056,6 +1069,19 @@
       .cart-fab {
         right: 16px;
         bottom: 16px;
+      }
+
+      .luxury-video-section {
+        padding: 50px 15px;
+      }
+
+      .luxury-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+      }
+
+      .luxury-video-frame {
+        padding: 6px;
       }
     }
   </style>
@@ -1133,29 +1159,26 @@
         </aside>
       </section>
 
-      <section class="video-theater glass" id="theater" aria-labelledby="theaterTitle">
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/gqb3tanlsY0"
-            title="Young Africa featured story video"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <aside class="video-sidebar">
-          <div>
-            <span class="section-kicker">Live Video Theater</span>
-            <h2 id="theaterTitle">Featured Story: Voices of Innovation</h2>
-            <p>A cinematic space for raw conversations with builders, dreamers, organizers, and everyday people shaping what it means to be African in today’s world.</p>
-          </div>
-          <div class="video-meta">
-            <span>Video ID: gqb3tanlsY0</span>
-            <span>Swap the YouTube ID when the next feature is ready.</span>
-          </div>
-        </aside>
-      </section>
+      <section class="luxury-video-section" id="theater" aria-labelledby="theaterTitle">
+        <div class="luxury-backdrop-glow" aria-hidden="true"></div>
+        <div class="luxury-container">
+          <p class="luxury-subtitle">Featured Media</p>
+          <h1 class="luxury-title" id="theaterTitle">Young of Africa</h1>
+          <div class="luxury-divider"></div>
 
+          <div class="luxury-video-frame">
+            <div class="luxury-video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/gqb3tanlsY0"
+                title="Young of Africa"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="mission glass" id="mission" aria-labelledby="missionTitle">
         <div>
           <span class="section-kicker">Our Mission</span>
